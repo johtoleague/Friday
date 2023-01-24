@@ -1,4 +1,7 @@
 # Reverse Engineering
-tools for sharing
+Tools for sharing.
+
+Currently interested in frida
+
 
 - I will add more APIs and way to search for searching and dumping shellcode.
