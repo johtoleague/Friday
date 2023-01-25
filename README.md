@@ -1,5 +1,5 @@
 ## Based around Frida.re 
-- DBI frameworks help with automate analysis
+- DBI frameworks help with the automation analysis
 - `pip3 install frida-tools`
 - with frida-trace, you can quickly intercept APIs of interest
 	- `frida-trace -f <target> -i <module Name>!<functions (s) >`
