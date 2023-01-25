@@ -1,3 +1,4 @@
+## Based around Frida.re 
 - DBI frameworks help with automate analysis
 - `pip3 install frida-tools`
 - with frida-trace, you can quickly intercept APIs of interest
