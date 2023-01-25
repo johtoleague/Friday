@@ -1,7 +1,27 @@
-# Reverse Engineering
-Tools for sharing.
+- DBI frameworks help with automate analysis
+- `pip3 install frida-tools`
+- with frida-trace, you can quickly intercept APIs of interest
+	- `frida-trace -f <target> -i <module Name>!<functions (s) >`
+	- example `frida-trace -f run.exe -i KERNEL32.DLL!CreateFile*
+	- -f target file to run
+	- -i funcgtions to interscept
+	- -* wildcard
+	- `log('lpText : ' + Memory.readUtf16String(args[1]));` # used as an argument in the handler or even in the python script to get what was passed into the API but exist only in memory 
+	- `log('LoadLibraryA(): ' + args[0].readAnsiString());`
+- Using it for Crypto example
+	- `frida-trace --decorate -f proc.exe -i Crypt*`
+		-  `--decorate` will provide the DLL along with the API that's used
+```javascript
+OnEnter(log, args, state) {
+	log('CryptDecrypt()');
+	this.decData = args[4];
+}
 
-Currently interested in frida
-
-- making frida a bit user friendly just thus the name friday
-- I will add more APIs and way to search for searching and dumping shellcode.
+OnLeave(log, retval, state) {
+	log('Decrypted data: ' + this.decData.readAnsiString());
+}}
+```
+## DBI with Frida-Python
+- modified with python bindings
+	- python gives us more control over execution and make it easier to troubleshoot issues
+- we can make script based of APIs such as VirtualAlloc VirtualProtect
