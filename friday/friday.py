@@ -5,7 +5,7 @@ import argparse
 def main():
     parser = argparse.ArgumentParser(description='Dump payload.')
     parser.add_argument('targets', nargs='+')
-    parser.add_argument('--script', '-s', default='default_script.js', help='Path to external JavaScript file')
+    parser.add_argument('--script', '-s', default='virtual.js', help='Path to external JavaScript file')
 
     args = parser.parse_args()
     pid = frida.spawn(args.targets)
