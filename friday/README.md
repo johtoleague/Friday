@@ -1,7 +1,10 @@
+- DBI frameworks help with automate analysis
+- Install frida import
+	- `pip3 install frida-tools`
 - friday.py needs to be fed an executable and optionally a dll and optionally a javascript with your choosing of detection
 `python friday.py something.exe <dll> <-s virtual.js>`
-- DBI frameworks help with automate analysis
-- `pip3 install frida-tools`
+
+
 - with frida-trace, you can quickly intercept APIs of interest
 	- `frida-trace -f <target> -i <module Name>!<functions (s) >`
 	- example `frida-trace -f run.exe -i KERNEL32.DLL!CreateFile*
