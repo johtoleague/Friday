@@ -8,6 +8,4 @@ example: `python friday.py something.exe <dll> <-s virtual.js>`
 
 
 
-- modified with python bindings
-	- python gives us more control over execution and make it easier to troubleshoot issues
 - we can make script based of APIs such as VirtualAlloc VirtualProtect
