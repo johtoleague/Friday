@@ -3,9 +3,6 @@
 - Install frida import
 	- `pip3 install frida-tools`
 - friday.py needs to be fed an executable and optionally a dll and optionally a javascript with your choosing of detection
-example: `python friday.py something.exe <dll> <-s virtual.js>`
+	- example: `python friday.py something.exe <dll> <-s virtual.js>`
+ 	  	- Great starting point to dump anything that's allocated or written to allocate space and has an MZ header.
 
-
-
-
-- we can make script based of APIs such as VirtualAlloc VirtualProtect
